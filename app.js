@@ -22,7 +22,7 @@ addEventListener("DOMContentLoaded", () => {
 
     if (resultado.cod == "404") console.log("No hay resultados");
 
-    const { name, main } = resultado;
+    const { name, main, sys, weather } = resultado;
 
     if (!name) return null;
 
@@ -80,9 +80,12 @@ addEventListener("DOMContentLoaded", () => {
                   />
                 </g>
               </svg>
+              <div>
               <p class="text-xl">${name}</p>
+              <p class="text-sm text-right">${sys.country}</p>
+              </div>
             </div>
-            <p class="text-right text-4xl font-bold mr-10 mt-5">
+            <p class="text-right text-4xl font-bold mt-5">
               ${parseFloat(main.temp - kelvin, 10).toFixed(
                 2
               )}<span>&#x2103;</span>
@@ -103,6 +106,7 @@ addEventListener("DOMContentLoaded", () => {
             <p class="w-full flex justify-between">Humedad <span>${
               main.humidity
             }%</span></p>
+            <p class="text-sm italic">${weather[0].description}</p>
           </div>
         </div>
     `;
