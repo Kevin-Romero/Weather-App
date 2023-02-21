@@ -13,7 +13,7 @@ addEventListener("DOMContentLoaded", () => {
 
   const buscarInformacion = async (ciudad) => {
     const apiKey = "cea2413c529e78a110f329e3b536b4f8";
-    const url = `http://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}`;
 
     const respuesta = await fetch(url);
     const resultado = await respuesta.json();
