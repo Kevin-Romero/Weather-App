@@ -6,10 +6,13 @@ addEventListener("DOMContentLoaded", () => {
   const kelvin = 273.15;
 
   //* Funciones
-  const validarDatos = () =>
+  const validarDatos = (e) => {
+    e.preventDefault();
+
     $inputCiudad.value.trim() === ""
       ? ($inputCiudad.required = "true")
       : buscarInformacion($inputCiudad.value.trim());
+  };
 
   const buscarInformacion = async (ciudad) => {
     const apiKey = "cea2413c529e78a110f329e3b536b4f8";
