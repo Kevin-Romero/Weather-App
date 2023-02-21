@@ -14,23 +14,22 @@ addEventListener("DOMContentLoaded", () => {
   const buscarInformacion = async (ciudad) => {
     const apiKey = "cea2413c529e78a110f329e3b536b4f8";
     const url = `http://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}`;
-    console.log(url);
 
     const respuesta = await fetch(url);
     const resultado = await respuesta.json();
-    console.log(resultado);
 
     if (resultado.cod == "404") console.log("No hay resultados");
 
-    const { name, main, sys, weather } = resultado;
+    const { name, main, sys, weather, wind } = resultado;
 
     if (!name) return null;
 
     $contenedor.innerHTML = `
-    <div class="md:max-w-lg h-36 m-auto flex border">
-          <div class="bg-yellow-300 w-1/2 p-4">
+    <div class="md:max-w-lg md:h-36 m-auto flex w-1/2 border flex-col md:flex-row">
+          <div class="bg-cyan-500 md:w-1/2 w-full p-4 text-white">
             <div class="flex justify-between items-center">
               <svg
+                class="opacity-0"
                 xmlns="http://www.w3.org/2000/svg"
                 version="1.0"
                 width="50"
@@ -92,7 +91,7 @@ addEventListener("DOMContentLoaded", () => {
             </p>
           </div>
 
-          <div class="w-1/2 bg-white flex items-center flex-wrap p-4 text-xl">
+          <div class="md:w-1/2 bg-white flex items-center flex-wrap p-4 text-xl">
             <p class="w-full flex justify-between">
               Maxima <span>${parseFloat(main.temp_max - kelvin, 10).toFixed(
                 2
