@@ -18,11 +18,9 @@ addEventListener("DOMContentLoaded", () => {
     const respuesta = await fetch(url);
     const resultado = await respuesta.json();
 
-    if (resultado.cod == "404") console.log("No hay resultados");
-
     const { name, main, sys, weather, wind } = resultado;
 
-    if (!name) return start($inputCiudad.value.trim());
+    if (!name) return mensaje($inputCiudad.value.trim());
 
     $contenedor.innerHTML = `
     <div class="md:max-w-lg md:h-36 m-auto flex w-1/2 border flex-col md:flex-row">
@@ -111,7 +109,7 @@ addEventListener("DOMContentLoaded", () => {
     `;
   };
 
-  function start(ciudad) {
+  function mensaje(ciudad) {
     $contenedor.innerHTML = `<div
     class="text-3xl uppercase mt-10 text-center"
   >no hay datos por mostrar de "${ciudad}"</div>`;
