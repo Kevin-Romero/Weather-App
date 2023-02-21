@@ -22,7 +22,7 @@ addEventListener("DOMContentLoaded", () => {
 
     const { name, main, sys, weather, wind } = resultado;
 
-    if (!name) return null;
+    if (!name) return start($inputCiudad.value.trim());
 
     $contenedor.innerHTML = `
     <div class="md:max-w-lg md:h-36 m-auto flex w-1/2 border flex-col md:flex-row">
@@ -110,6 +110,12 @@ addEventListener("DOMContentLoaded", () => {
         </div>
     `;
   };
+
+  function start(ciudad) {
+    $contenedor.innerHTML = `<div
+    class="text-3xl uppercase mt-10 text-center"
+  >no hay datos por mostrar de "${ciudad}"</div>`;
+  }
 
   //* Eventos
   $formulario.addEventListener("submit", validarDatos);
