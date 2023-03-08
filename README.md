@@ -2,13 +2,16 @@
 
 [ver sitio web](https://kevin-romero.github.io/Weather-App/ "ver sitio web")
 
-Este es un proyecto web responsivo para ver las condiciones climaticas de cualquie ciudad del mundo utilizando una API llamada [openweathermap](https://openweathermap.org/ "openweathermap").
+Este es un proyecto web responsivo para ver las condiciones climáticas de cualquier ciudad del mundo en tiempo real utilizando una API gratuita llamada [openweathermap](https://openweathermap.org/ "openweathermap").
+
+[![Weather app Image](https://kevinromero.dev/assets/img/proyectos/weather%20app.png "Weather app Image")](https://kevinromero.dev/assets/img/proyectos/weather%20app.png "Weather app Image")
 
 ## Funcionamiento
 
-Mandamos el nombre de la ciudad a la cual queremos consultar a travez de un formulario, posteriormente la API nos devuelve la informacion en formato JSON con la cual ya podemos interacturar para poder mostrarla al usuario. En caso de no encontrar la ciudad la pagina nos mostrara un mensaje para informarle al usuario.
+A traves de un formulario guardamos el nombre de la ciudad de la cual queremos consultar el estado climático y posteriormente lo mandamos a la url de la API para realizar la consulta junto con nuestra API KEY para que nos regrese el resultado y poder convertirlo en formato JSON para posteriormente utilizarlo para mostrar la informacion obtenida por medio de una card.
+En caso de no encontrar la ciudad la pagina nos mostrara un mensaje para informarle al usuario.
 
-## Tecnologias Utilizadas
+## Tecnologías Utilizadas
 
 - HTML
 - CSS
@@ -17,4 +20,6 @@ Mandamos el nombre de la ciudad a la cual queremos consultar a travez de un form
 - API
 - JSON
 
-## Muestra tu apoyo Dame una ⭐️ si este proyecto te ayudó!
+## Muestra tu apoyo
+
+Dame una ⭐️ si este proyecto te ayudó!
